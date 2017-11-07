@@ -115,6 +115,53 @@ many3s = replicate 10 3
 -- But we choose to output only 10
 cycleList = take 10 (cycle [1, 2, 3, 4, 5])
 
+listTimes2 = [x*2 | x <- [1 .. 10]]
+
+-- Adding a Filter
+listTimes3 = [x*3 | x <- [1 .. 10], x * 3 <= 20 ]
+
+-- Applying two Filters
+divisibleBy9N13 = [x | x <- [1 .. 500], x `mod` 13 == 0, x `mod` 9 == 0]
+
+-- sorted list
+sortedList = sort [1, 9, 4, 6, 10, 3]
+
+-- Adding two lists using zipWith
+sumOfLists = zipWith (+) [1, 2, 3, 4] [5, 6, 7, 8]
+
+listBiggerThan5 = filter (>5) morePrime2
+
+evensUpTo20 = takeWhile (<= 20) [2, 4 .. ]
+
+multOfListl = foldl (*) 1 [2, 3, 4, 5]
+
+multOfListr = foldr (*) 1 [2, 3, 4, 5]
+
+-- Now we will go through List Comprehensions
+pow3List = [3^n | n <- [1 .. 10]]
+
+-- Building Multiplication Tables
+multTable = [[x * y | y <- [1 .. 10]] | x <- [1 .. 10]]
+
+-- Let's go through Tuples
+-- We can different datatypes in a Tuple
+
+randTuple = (1, "Random Tuple")
+
+bobSmith = ("Bob Smith", 52)
+
+bobsName = fst bobSmith
+bobsAge = snd bobSmith
+
+names = ["Bob", "Mary", "Tom"]
+addresses = ["123 Main", "234 North", "567 South"]
+
+namesNAddress = zip names addresses
+
+
+
+
+
 
 
 
